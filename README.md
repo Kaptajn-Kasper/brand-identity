@@ -181,7 +181,8 @@ Then run `npm run build` and check `dist/`.
 
 1. Bump `version` in `package.json` (semver: removing or renaming a token or
    logo is a major bump), merge to `main`.
-2. Tag it: `git tag v1.1.0 && git push origin v1.1.0`.
-3. The `release` workflow builds the package and attaches the `.tgz` to a
+2. Tag it: `git tag v1.1.0 && git push origin v1.1.0`, or on GitHub use
+   **Releases → Draft a new release**, type the new tag `v1.1.0` and publish.
+3. The `release` workflow builds the package and attaches the `.tgz` to the
    GitHub Release.
 4. Update the URL in each app's `package.json`.

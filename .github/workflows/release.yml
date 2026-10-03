@@ -6,6 +6,11 @@ name: release
 on:
   push:
     tags: ['v*']
+  release:
+    types: [published]
+
+concurrency:
+  group: release-${{ github.ref_name }}
 
 permissions:
   contents: write
@@ -34,7 +39,14 @@ jobs:
       # prepack runs the build.
       - run: npm pack
 
+      # The release may already exist if it was drafted in the GitHub UI
+      # (which creates the tag); then just attach the tarball to it.
       - name: create release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" ./*.tgz --title "$GITHUB_REF_NAME" --generate-notes
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" ./*.tgz --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" ./*.tgz --title "$GITHUB_REF_NAME" --generate-notes
+          fi
