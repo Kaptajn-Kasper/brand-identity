@@ -1,0 +1,261 @@
+{
+  "color": {
+    "$type": "color",
+    "brand": {
+      "$description": "The fixed brand colours used in the logos. They do not change between light and dark mode.",
+      "teal": {
+        "900": {
+          "$value": "#003c45",
+          "$description": "Logo mark on white (primary variant 1)"
+        },
+        "850": {
+          "$value": "#083a42",
+          "$description": "Logo background, dark (primary variant 3)"
+        },
+        "700": {
+          "$value": "#0c5460",
+          "$description": "Logo mark on light teal (primary variant 2)"
+        },
+        "200": {
+          "$value": "#abdee5",
+          "$description": "Logo background, light (primary variant 2) / mark on dark (variant 3)"
+        }
+      },
+      "slate": {
+        "800": {
+          "$value": "#4c6267",
+          "$description": "Logo mark on white (secondary variant 1)"
+        },
+        "700": {
+          "$value": "#52686d",
+          "$description": "Logo mark on light slate (secondary variant 2) / background, dark (variant 3)"
+        },
+        "100": {
+          "$value": "#cfe7ed",
+          "$description": "Logo background, light (secondary variant 2) / mark on dark (variant 3)"
+        }
+      },
+      "purple": {
+        "900": {
+          "$value": "#432b54",
+          "$description": "Logo mark on white (tertiary variant 1)"
+        },
+        "700": {
+          "$value": "#5b426c",
+          "$description": "Logo mark on light purple (tertiary variant 2) / background, dark (variant 3)"
+        },
+        "200": {
+          "$value": "#d0b1e3",
+          "$description": "Logo background, light (tertiary variant 2) / mark on dark (variant 3)"
+        }
+      },
+      "white": {
+        "$value": "#ffffff"
+      }
+    },
+    "light": {
+      "$description": "Material 3 light scheme (from the brand board). Roles follow https://m3.material.io/styles/color/roles",
+      "primary": {
+        "$value": "#003c45"
+      },
+      "on-primary": {
+        "$value": "#ffffff"
+      },
+      "primary-container": {
+        "$value": "#0c5460"
+      },
+      "on-primary-container": {
+        "$value": "#8bc6d4"
+      },
+      "secondary": {
+        "$value": "#4c6267"
+      },
+      "on-secondary": {
+        "$value": "#ffffff"
+      },
+      "secondary-container": {
+        "$value": "#cfe7ed"
+      },
+      "on-secondary-container": {
+        "$value": "#52686d"
+      },
+      "tertiary": {
+        "$value": "#432b54"
+      },
+      "on-tertiary": {
+        "$value": "#ffffff"
+      },
+      "tertiary-container": {
+        "$value": "#5b426c"
+      },
+      "on-tertiary-container": {
+        "$value": "#d0b1e3"
+      },
+      "error": {
+        "$value": "#ba1a1a"
+      },
+      "on-error": {
+        "$value": "#ffffff"
+      },
+      "error-container": {
+        "$value": "#ffdad6"
+      },
+      "on-error-container": {
+        "$value": "#93000a"
+      },
+      "surface-dim": {
+        "$value": "#d8dadb"
+      },
+      "surface": {
+        "$value": "#f8f9fa"
+      },
+      "surface-bright": {
+        "$value": "#f8f9fa"
+      },
+      "surface-container-lowest": {
+        "$value": "#ffffff"
+      },
+      "surface-container-low": {
+        "$value": "#f2f4f4"
+      },
+      "surface-container": {
+        "$value": "#eceeef"
+      },
+      "surface-container-high": {
+        "$value": "#e7e8e9"
+      },
+      "surface-container-highest": {
+        "$value": "#e1e3e3"
+      },
+      "on-surface": {
+        "$value": "#191c1d"
+      },
+      "on-surface-variant": {
+        "$value": "#40484a"
+      },
+      "outline": {
+        "$value": "#70797b"
+      },
+      "outline-variant": {
+        "$value": "#bfc8ca"
+      },
+      "inverse-surface": {
+        "$value": "#2e3132"
+      },
+      "inverse-on-surface": {
+        "$value": "#eff1f2"
+      },
+      "inverse-primary": {
+        "$value": "#94d0de"
+      },
+      "scrim": {
+        "$value": "#000000"
+      },
+      "shadow": {
+        "$value": "#000000"
+      }
+    },
+    "dark": {
+      "$description": "Material 3 dark scheme (from the brand board).",
+      "primary": {
+        "$value": "#94d0de"
+      },
+      "on-primary": {
+        "$value": "#00363f"
+      },
+      "primary-container": {
+        "$value": "#0c5460"
+      },
+      "on-primary-container": {
+        "$value": "#8bc6d4"
+      },
+      "secondary": {
+        "$value": "#b4cad0"
+      },
+      "on-secondary": {
+        "$value": "#1e3438"
+      },
+      "secondary-container": {
+        "$value": "#374c51"
+      },
+      "on-secondary-container": {
+        "$value": "#a6bcc2"
+      },
+      "tertiary": {
+        "$value": "#dbbbed"
+      },
+      "on-tertiary": {
+        "$value": "#3e264e"
+      },
+      "tertiary-container": {
+        "$value": "#5b426c"
+      },
+      "on-tertiary-container": {
+        "$value": "#d0b1e3"
+      },
+      "error": {
+        "$value": "#ffb4ab"
+      },
+      "on-error": {
+        "$value": "#690005"
+      },
+      "error-container": {
+        "$value": "#93000a"
+      },
+      "on-error-container": {
+        "$value": "#ffdad6"
+      },
+      "surface-dim": {
+        "$value": "#111415"
+      },
+      "surface": {
+        "$value": "#111415"
+      },
+      "surface-bright": {
+        "$value": "#373a3a"
+      },
+      "surface-container-lowest": {
+        "$value": "#0c0f0f"
+      },
+      "surface-container-low": {
+        "$value": "#191c1d"
+      },
+      "surface-container": {
+        "$value": "#1d2021"
+      },
+      "surface-container-high": {
+        "$value": "#272a2b"
+      },
+      "surface-container-highest": {
+        "$value": "#323536"
+      },
+      "on-surface": {
+        "$value": "#e1e3e3"
+      },
+      "on-surface-variant": {
+        "$value": "#bfc8ca"
+      },
+      "outline": {
+        "$value": "#899295"
+      },
+      "outline-variant": {
+        "$value": "#40484a"
+      },
+      "inverse-surface": {
+        "$value": "#e1e3e3"
+      },
+      "inverse-on-surface": {
+        "$value": "#2e3132"
+      },
+      "inverse-primary": {
+        "$value": "#276673"
+      },
+      "scrim": {
+        "$value": "#000000"
+      },
+      "shadow": {
+        "$value": "#000000"
+      }
+    }
+  }
+}

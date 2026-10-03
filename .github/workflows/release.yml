@@ -1,0 +1,40 @@
+# Push a tag matching package.json's version (e.g. v1.2.0) to publish a release.
+# The npm tarball is attached to the GitHub Release; apps depend on its URL:
+#   npm install https://github.com/Kaptajn-Kasper/brand-identity/releases/download/v1.2.0/kaptajn-kasper-brand-1.2.0.tgz
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: check tag matches package.json
+        run: |
+          version=$(node -p 'require("./package.json").version')
+          if [[ "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package.json version $version"
+            exit 1
+          fi
+
+      - run: npm ci
+
+      # prepack runs the build.
+      - run: npm pack
+
+      - name: create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" ./*.tgz --title "$GITHUB_REF_NAME" --generate-notes

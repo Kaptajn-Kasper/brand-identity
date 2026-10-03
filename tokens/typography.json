@@ -1,0 +1,42 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "brand": {
+        "$value": [
+          "Figtree",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ],
+        "$description": "Figtree (SIL OFL 1.1), used for the wordmark and all UI text."
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "light": {
+        "$value": 300
+      },
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600,
+        "$description": "The weight of the 'Kaptajn Kasper' wordmark."
+      },
+      "bold": {
+        "$value": 700
+      },
+      "extrabold": {
+        "$value": 800
+      }
+    }
+  }
+}

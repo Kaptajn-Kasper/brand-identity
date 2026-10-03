@@ -1,0 +1,45 @@
+{
+  "name": "@kaptajn-kasper/brand",
+  "version": "1.0.0",
+  "description": "Kaptajn Kasper brand identity: design tokens (colour, typography), Figtree font and logos for apps.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaptajn-Kasper/brand-identity.git"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/js/tokens.js",
+  "types": "./dist/js/tokens.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/js/tokens.d.ts",
+      "default": "./dist/js/tokens.js"
+    },
+    "./brand.css": "./dist/css/brand.css",
+    "./tokens.css": "./dist/css/tokens.css",
+    "./fonts.css": "./dist/css/fonts.css",
+    "./tokens.scss": "./dist/scss/_tokens.scss",
+    "./tokens.json": "./dist/json/tokens.json",
+    "./fonts/*": "./dist/fonts/*",
+    "./logos/*": "./dist/logos/*",
+    "./icons/*": "./dist/icons/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "export-logos": "scripts/export-logos.sh",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@fontsource-variable/figtree": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "style-dictionary": "^5.0.0",
+    "svgo": "^4.0.0"
+  }
+}
