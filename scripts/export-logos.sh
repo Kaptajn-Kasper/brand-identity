@@ -16,6 +16,7 @@ board=brand-board.svg
 declare -A out_dir=(
   [logo-1]=brand-assets/logos
   [logo-2]=brand-assets/logos-with-brand-name
+  [logo-3]=brand-assets/logos-playful
 )
 
 if ! fc-list : family | grep -i figtree >/dev/null; then
@@ -29,7 +30,7 @@ import re, sys, xml.etree.ElementTree as ET
 label = '{http://www.inkscape.org/namespaces/inkscape}label'
 for el in ET.parse(sys.argv[1]).getroot().iter():
     name = el.get(label) or ''
-    if re.fullmatch(r'logo-[12]-color-(primary|secondary|tertiary)-variant-[1-3]', name):
+    if re.fullmatch(r'logo-[123]-color-(primary|secondary|tertiary)-variant-[1-3]', name):
         print(f"{name}\t{el.get('id')}")
 PY
 )

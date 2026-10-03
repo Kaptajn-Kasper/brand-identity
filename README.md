@@ -133,7 +133,9 @@ Delete the app's own `public/favicon.ico` so it doesn't shadow the brand one.
 
 Logos in `dist/logos/` are named `<kind>-<colour>-<background>.{svg,png}`:
 
-- **kind**: `icon` is the boat mark alone; `wordmark` adds "Kaptajn Kasper".
+- **kind**: `icon` is the boat mark alone; `wordmark` adds "Kaptajn Kasper";
+  `playful` is the tilted 3D wordmark for informal, game-like contexts
+  (PNG only, 1024 px wide).
 - **colour**: `primary` (teal), `secondary` (slate), `tertiary` (purple).
 - **background**: every logo is a rounded tile. `white` has a coloured mark on
   white, `light` has a dark mark on a light tint, and `dark` has a light mark on
@@ -141,6 +143,9 @@ Logos in `dist/logos/` are named `<kind>-<colour>-<background>.{svg,png}`:
 
 Prefer the SVGs. The text in them is converted to outlines, so they look the
 same everywhere, including in `<img>` tags, which cannot load web fonts.
+
+The playful logo's SVGs (~1 MB each, because of the 3D extrusion) are only in
+`brand-assets/logos-playful/` in this repo, for print and design work.
 
 ## Palette
 

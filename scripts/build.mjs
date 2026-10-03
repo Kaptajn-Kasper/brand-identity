@@ -207,12 +207,18 @@ await writeFile(
 // brand-board labels -> descriptive names. variant-1 is the mark on white,
 // variant-2 on a light tint of the colour, variant-3 light mark on a dark tile.
 const BACKGROUND = { 1: 'white', 2: 'light', 3: 'dark' };
-const LOGO_DIRS = { 'logos': 'icon', 'logos-with-brand-name': 'wordmark' };
+// The playful logo's 3D extrusion makes its SVGs ~1 MB each, so the package
+// ships it as PNG only; the SVGs stay in brand-assets/ for print and design.
+const LOGO_DIRS = {
+  'logos': { kind: 'icon', formats: ['svg', 'png'] },
+  'logos-with-brand-name': { kind: 'wordmark', formats: ['svg', 'png'] },
+  'logos-playful': { kind: 'playful', formats: ['png'] },
+};
 await mkdir(path.join(dist, 'logos'), { recursive: true });
-for (const [dir, kind] of Object.entries(LOGO_DIRS)) {
+for (const [dir, { kind, formats }] of Object.entries(LOGO_DIRS)) {
   for (const file of await readdir(path.join(root, 'brand-assets', dir))) {
     const m = file.match(/^logo-\d-color-(primary|secondary|tertiary)-variant-([1-3])\.(svg|png)$/);
-    if (!m) continue;
+    if (!m || !formats.includes(m[3])) continue;
     const [, role, variant, ext] = m;
     await cp(
       path.join(root, 'brand-assets', dir, file),
